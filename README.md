@@ -12,5 +12,6 @@ There is also a filter that removes several group links for users that do not ha
 - all
 - publish
 - trash
+
 The role is deleted on uninstall.
 
