@@ -27,4 +27,4 @@ function filterLinksFromPageEditScreen($views)
         unset($views['all'], $views['publish'], $views['trash']);
     return $views;
 }
-add_filter('views_edit-page', 'filterLinksFromPageEditScreen');
+add_filter('views_edit-page', array($this, 'filterLinksFromPageEditScreen'));
