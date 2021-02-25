@@ -9,22 +9,7 @@ namespace PageEditorOnly;
 * License URI: https://www.gnu.org/licenses/gpl-3.0.html
 */
 
-require_once('PageEditorOnlyDataStructure.php');
-
-register_activation_hook(__FILE__, function () {
-    if (wp_roles()->is_role(PageEditorOnlyDataStructure::pageEditorOnlyRoleIdentifier))
-        return;
-
-    add_role(
-        PageEditorOnlyDataStructure::pageEditorOnlyRoleIdentifier,
-        PageEditorOnlyDataStructure::pageEditorRoleName,
-        PageEditorOnlyDataStructure::pageEditorPermissions
-    );
-});
-function filterLinksFromPageEditScreen($views)
-{
-    if (!current_user_can('edit_others_pages'))
-        unset($views['all'], $views['publish'], $views['trash']);
-    return $views;
-}
-add_filter('views_edit-page', 'filterLinksFromPageEditScreen');
+require_once('Loader.php');
+Loader::loadLibraries();
+(new Roles)->addRoles();
+(new Filters)->addFilters();

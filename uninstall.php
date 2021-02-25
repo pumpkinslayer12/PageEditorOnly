@@ -3,7 +3,8 @@
 namespace PageEditorOnly;
 
 if (defined('WP_UNINSTALL_PLUGIN')) {
-    require_once('PageEditorOnly.php');
-    remove_role(PageEditorOnlyDataStructure::pageEditorOnlyRoleIdentifier);
-    remove_filter('views_edit-page', 'filterLinksFromPageEditScreen');
+    require_once('Loader.php');
+    Loader::loadLibraries();
+    (new Roles)->removeRoles();
+    (new Filters)->removeFilters();
 }
