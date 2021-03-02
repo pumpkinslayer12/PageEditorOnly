@@ -1,10 +1,9 @@
 === Page Editor Only ===
 Contributors: pumpkinslayer12
-Tags: page editor, page editor only, custom page role
-Requires at least: 4.7
+Tags: page,editor,custom
+Requires at least: 1.0
 Tested up to: 5.6.2
-Stable tag: trunk
-Requires PHP: 7.0
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Adds custom role that can only edit their pages.
