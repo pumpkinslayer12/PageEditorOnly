@@ -8,7 +8,7 @@ Creates a custom role called ***PageEditorOnlyRole***. This role has the followi
 - publish_pages
 - upload_files
 
-There is also a filter that removes several group links for users that do not have the edit_others_pages permission from the edit page views. This is an aesthetic adjustment as the role cannot edit the pages of others. The following group links are removed.:
+There is also a filter that removes several group links for users that do not have the edit_others_pages permission from the edit page views. This is an aesthetic adjustment as the role cannot edit the pages of others. The following group links are removed:
 - all
 - publish
 - trash
