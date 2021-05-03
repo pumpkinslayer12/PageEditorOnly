@@ -5,14 +5,15 @@ namespace PageEditorOnly;
 class PageEditorOnlyRole
 {
     private const pageEditorOnlyRoleSlug = 'pageEditorOnly';
-    private const pageEditorOnlyRoleIdentifier = self::pageEditorOnlyRoleSlug . 'Role';
+    public const pageEditorOnlyRoleIdentifier = self::pageEditorOnlyRoleSlug . 'Role';
     private const pageEditorRoleName = 'Page Editor';
     private const pageEditorPermissions = [
         'read' => true,
         'edit_published_pages' => true,
         'edit_pages' => true,
         'upload_files' => true,
-        'publish_pages' => true
+        'publish_pages' => true,
+        'unfiltered_html' => true
     ];
     public function addPageEditorOnlyRole()
     {
@@ -27,8 +28,7 @@ class PageEditorOnlyRole
 
     public function removePageEditorOnlyRole()
     {
-        if (defined('WP_UNINSTALL_PLUGIN')) {
-            remove_role(self::pageEditorOnlyRoleIdentifier);
-        }
+
+        remove_role(self::pageEditorOnlyRoleIdentifier);
     }
 }

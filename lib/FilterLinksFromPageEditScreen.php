@@ -25,14 +25,12 @@ class FilterLinksFromPageEditScreen
 
     public function removeFilterLinksFromPageEditScreen()
     {
-        if (defined('WP_UNINSTALL_PLUGIN')) {
-            remove_filter(
-                self::filterLinksFromPageEditScreenView,
-                array($this, 'filterLinksFromPageEditScreen'),
-                self::filterLinksFromPageEditScreenExecutionPriority,
-                self::filterLinksFromPageEditScreenArguments
-            );
-        }
+        remove_filter(
+            self::filterLinksFromPageEditScreenView,
+            array($this, 'filterLinksFromPageEditScreen'),
+            self::filterLinksFromPageEditScreenExecutionPriority,
+            self::filterLinksFromPageEditScreenArguments
+        );
     }
 
     public function filterLinksFromPageEditScreen($links)
